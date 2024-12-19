@@ -8,7 +8,6 @@ import FoundationNetworking
 import Dispatch
 
 print("Bienvenue au quiz Trivia")
-
 struct questionQuiz: Codable {
     var categorie: String
     var niveau: String
@@ -53,7 +52,7 @@ func afficherQuestions(questions: [questionQuiz]) {
                      print("Mauvaise réponse. La bonne réponse est : \(question.correcte).")
                 }
             } 
-              print("**** Fin du Quiz ****")
+    print("**** Fin du Quiz ****")
     print("Votre score final est: \(score) / \(questions.count)")
         } while reponseUtilisateur == nil
     }
@@ -67,7 +66,6 @@ struct ReponseAPIQuiz: Codable {
         case resultats = "results"  
     }
 }
-
 func recupererQuestions() {
     let tache = URLSession.shared.dataTask(with: url) { donnees, reponse, erreur in
         if let erreur = erreur {
